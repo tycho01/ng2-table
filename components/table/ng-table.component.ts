@@ -5,7 +5,7 @@ import {NgTableSortingDirective} from './ng-table-sorting.directive';
 @Component({
   selector: 'ng-table',
   template: `
-    <table class="table table-striped table-bordered dataTable"
+    <table class="table table-light dataTable"
            role="grid" style="width: 100%;">
       <thead>
       <tr role="row">
@@ -18,7 +18,7 @@ import {NgTableSortingDirective} from './ng-table-sorting.directive';
       </thead>
       <tbody>
       <tr *ngFor="let row of rows">
-        <td *ngFor="let column of columns">{{getData(row, column.name)}}</td>
+        <td *ngFor="let column of columns" [innerHtml]="getData(row, column.name)"></td>
       </tr>
       </tbody>
     </table>
